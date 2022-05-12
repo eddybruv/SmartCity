@@ -6,7 +6,7 @@ public class User {
     static public void userSubroutine () {
         Scanner read = new Scanner(System.in);
 
-        System.out.print("Choices \n1. Search by evaluation.\n2. Search by town. \n3. Make recommendation \n4. Quit" );
+        System.out.print("User Choices \n1. Search by evaluation.\n2. Search by town. \n3. Make recommendation \n4. Quit\n" );
         int choice = read.nextInt();
         do {
             if (choice == 1) {
@@ -42,7 +42,7 @@ public class User {
                 String name = read.nextLine();
                 for(int n = 0; n < Main.registeredHotels.size(); n++) {
                     if(Main.registeredHotels.get(n).name.equals(name))
-                        Main.registeredHotels.get(n);
+                        Main.registeredHotels.get(n).recommendation++;
                 }
             }
             else if (choice == 4) {
