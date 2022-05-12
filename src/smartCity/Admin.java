@@ -3,7 +3,7 @@ package smartCity;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Admin {
+public class Admin extends User {
 
     static Hotel addHotel() {
         Scanner read = new Scanner(System.in);
