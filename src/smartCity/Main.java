@@ -26,7 +26,7 @@ public class Main {
                 System.out.print("Admin Mode\n");
                 System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 
-                System.out.println("Enter choice of action: \n1. Enter Admin-User Mode \n2. Register Hotels\n");
+                System.out.println("Enter choice of action: \n1. Enter Admin-User Mode \n2. Register Hotels\n3. Exit");
                 int admin_choice = read.nextInt();
 
                 if(admin_choice == 1) {
@@ -34,12 +34,15 @@ public class Main {
                     System.out.print("Admin-User Mode\n");
                     System.out.print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
                     Admin.userSubroutine();
-                } else {
+                } else if(admin_choice == 2) {
                     Admin.adminSubroutine(registeredHotels);
-                    System.out.println("\nRegistered Hotels are: \n");
-                    for(int n = 0; n < registeredHotels.size(); n++) {
-                        System.out.println(n + 1 + ". " + registeredHotels.get(n).name);
+                    System.out.println("Registered Hotels are: \n");
+                    System.out.printf("%s %15s %15s %15s\n", "NAME", "TOWN", "PRICE", "STARS");
+                    for (Hotel registeredHotel : registeredHotels) {
+                        System.out.printf("%s %17s %17s %11s \n", registeredHotel.name, registeredHotel.town, String.valueOf(registeredHotel.price), String.valueOf(registeredHotel.evaluation));
                     }
+                } else {
+
                 }
 
             } else if (userChoice == 2) {
