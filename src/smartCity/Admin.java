@@ -15,10 +15,10 @@ public class Admin extends User {
         String town = read.nextLine();
 
         System.out.print("Enter new hotel price: ");
-        int evaluation = read.nextInt();
+        double price = read.nextInt();
 
         System.out.print("Enter new hotel evaluation: ");
-        double price = read.nextInt();
+        int evaluation = read.nextInt();
 
         return new Hotel(name, price, town, evaluation);
     }
@@ -32,6 +32,7 @@ public class Admin extends User {
             Hotel newHotel = Admin.addHotel();
             hotels.add(newHotel);
             n -= 1;
+            System.out.println('\n');
         }while(n > 0);
     }
 }
